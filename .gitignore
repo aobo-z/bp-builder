@@ -1,0 +1,21 @@
+### IntelliJ IDEA (multi-module workspace root) ###
+.idea/
+*.iws
+*.iml
+*.ipr
+tmp/
+
+### Maven ###
+target/
+**/target/
+
+### Local configuration and secrets ###
+.env
+*.local
+
+### macOS ###
+.DS_Store
+
+### Generated folders ###
+front_end/
+output/

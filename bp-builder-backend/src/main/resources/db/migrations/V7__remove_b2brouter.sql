@@ -1,0 +1,13 @@
+-- B2Brouter's endpoints cannot be used in this project, so none of its
+-- operations may stay in the catalog.
+--
+-- Removing the API cascades to its api_operations rows and, through them, to
+-- operation_field_mappings (none existed), operation_semantics and
+-- compatibility_checks. bp_builder.process_tasks.api_operation_id is
+-- ON DELETE SET NULL, so a task that pointed at one of these operations
+-- keeps existing but loses its binding.
+--
+-- Matches the exact name only. The two older rows 'B2BRouterInvoiceAPI' and
+-- 'B2Brouter Invoice API' own no operations and belong to the earlier schema
+-- mapping module, so they are left alone.
+DELETE FROM apis WHERE name = 'B2Brouter API';

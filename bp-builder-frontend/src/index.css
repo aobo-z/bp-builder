@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --color-ink: #0f1b33;
+  --color-ink2: #435069;
+  --color-ink3: #6b7790;
+  --color-line: #e2e6ee;
+  --color-canvas: #f4f6fa;
+  --color-navy: #14224a;
+  --color-tx: #4338ca;
+  --color-tx-bg: #eef2ff;
+  --color-tx-bd: #c7d2fe;
+  --color-va: #b45309;
+  --color-va-bg: #fffbeb;
+  --color-va-bd: #fcd34d;
+  --color-co: #0f766e;
+  --color-co-bg: #f0fdfa;
+  --color-co-bd: #99f6e4;
+  --color-art: #6d28d9;
+  --color-art-bg: #f5f3ff;
+  --color-art-bd: #ddd6fe;
+  --color-ok: #15803d;
+  --color-ok-bg: #f0fdf4;
+  --color-ok-bd: #bbf7d0;
+  --color-err: #b91c1c;
+  --color-err-bg: #fef2f2;
+  --color-err-bd: #fecaca;
+  --color-warn: #c2410c;
+  --color-warn-bg: #fff7ed;
+  --color-warn-bd: #fed7aa;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: var(--color-canvas);
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+::selection {
+  background: #c7d2fe;
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+*:hover {
+  scrollbar-color: #c4cbd9 transparent;
+}
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: not-allowed;
+}
+:focus-visible {
+  outline: 2px solid #4338ca;
+  outline-offset: 2px;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes slidein {
+  from {
+    transform: translateX(24px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+@keyframes fadeup {
+  from {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+@keyframes flow {
+  to {
+    stroke-dashoffset: -16;
+  }
+}
+.slidein {
+  animation: slidein 0.2s ease-out;
+}
+.fadeup {
+  animation: fadeup 0.25s ease-out;
+}
+.flow {
+  stroke-dasharray: 5 4;
+  animation: flow 0.8s linear infinite;
+}
+.bp-selected .djs-visual > rect,
+.bp-selected .djs-visual > path,
+.bp-selected .djs-visual > polygon {
+  stroke: #14224a !important;
+  stroke-width: 3px !important;
+}

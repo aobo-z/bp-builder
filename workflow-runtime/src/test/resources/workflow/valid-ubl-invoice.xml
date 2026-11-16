@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
+         xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+         xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+  <cbc:ID>TEST-BP-20261002-002</cbc:ID>
+  <cbc:IssueDate>2026-10-02</cbc:IssueDate>
+  <cbc:DueDate>2026-11-01</cbc:DueDate>
+  <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
+  <cbc:DocumentCurrencyCode>AUD</cbc:DocumentCurrencyCode>
+
+  <cac:AccountingSupplierParty>
+    <cac:Party>
+      <cac:PartyName>
+        <cbc:Name>Example Supplier Pty Ltd</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:StreetName>1 Example Street</cbc:StreetName>
+        <cbc:CityName>Sydney</cbc:CityName>
+        <cbc:PostalZone>2000</cbc:PostalZone>
+        <cbc:CountrySubentity>NSW</cbc:CountrySubentity>
+        <cac:Country>
+          <cbc:IdentificationCode>AU</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+    </cac:Party>
+  </cac:AccountingSupplierParty>
+
+  <cac:AccountingCustomerParty>
+    <cac:Party>
+      <cac:PartyName>
+        <cbc:Name>Example Buyer Pty Ltd</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:StreetName>2 Sample Road</cbc:StreetName>
+        <cbc:CityName>Melbourne</cbc:CityName>
+        <cbc:PostalZone>3000</cbc:PostalZone>
+        <cbc:CountrySubentity>VIC</cbc:CountrySubentity>
+        <cac:Country>
+          <cbc:IdentificationCode>AU</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+    </cac:Party>
+  </cac:AccountingCustomerParty>
+
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="AUD">4.00</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="AUD">40.00</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="AUD">4.00</cbc:TaxAmount>
+      <cbc:Percent>10</cbc:Percent>
+      <cac:TaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Percent>10</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID>GST</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:TaxTotal>
+
+  <cac:LegalMonetaryTotal>
+    <cbc:LineExtensionAmount currencyID="AUD">40.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="AUD">40.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="AUD">44.00</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="AUD">44.00</cbc:PayableAmount>
+  </cac:LegalMonetaryTotal>
+
+  <cac:InvoiceLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="EA">2</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="AUD">30.00</cbc:LineExtensionAmount>
+    <cac:Item>
+      <cbc:Name>Notebook</cbc:Name>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Percent>10</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID>GST</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="AUD">15.00</cbc:PriceAmount>
+    </cac:Price>
+  </cac:InvoiceLine>
+
+  <cac:InvoiceLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="EA">5</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="AUD">10.00</cbc:LineExtensionAmount>
+    <cac:Item>
+      <cbc:Name>Pen</cbc:Name>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Percent>10</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID>GST</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="AUD">2.00</cbc:PriceAmount>
+    </cac:Price>
+  </cac:InvoiceLine>
+</Invoice>
